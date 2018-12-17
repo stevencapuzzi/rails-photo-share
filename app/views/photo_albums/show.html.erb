@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @photo_album.title %>
+</p>
+
+<p>
+  <strong>Short description:</strong>
+  <%= @photo_album.short_description %>
+</p>
+
+<p>
+<%= image_tag @photo_album.cover_image, height: '200' %>
+</p>
+
+<%= link_to 'Edit', edit_photo_album_path(@photo_album) %> |
+<%= link_to 'Back', photo_albums_path %>

@@ -1,0 +1,33 @@
+<%= form_with(model: photo_album, local: true) do |form| %>
+  <% if photo_album.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(photo_album.errors.count, "error") %> prohibited this photo_album from being saved:</h2>
+
+      <ul>
+      <% photo_album.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :short_description %>
+    <%= form.text_area :short_description %>
+  </div>
+
+
+  <div class="field">
+    <%= form.label :cover_image %>
+    <%= form.file_field :cover_image %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
